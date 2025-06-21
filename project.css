@@ -1,0 +1,100 @@
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background-color: #f4f4f4;
+}
+
+.survey-container {
+  background-color: #f9a825;
+  padding: 2rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+}
+
+.survey-form {
+  background-color: white;
+  padding: 1.5rem;
+  width: 350px;
+  box-sizing: border-box;
+  border-radius: 4px;
+  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.15);
+}
+
+.survey-form h2 {
+  text-align: center;
+  margin-bottom: 0.2rem;
+}
+
+.survey-form .subtitle {
+  text-align: center;
+  font-size: 0.85rem;
+  color: #666;
+  margin-bottom: 1rem;
+}
+
+.survey-form label {
+  display: block;
+  margin-bottom: 1rem;
+  font-size: 0.9rem;
+}
+
+.survey-form input,
+.survey-form select,
+.survey-form textarea {
+  width: 100%;
+  padding: 6px;
+  margin-top: 4px;
+  font-size: 0.9rem;
+  box-sizing: border-box;
+}
+
+.checkbox-group {
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+  margin-bottom: 1rem;
+}
+
+.survey-form input[type="checkbox"],
+.survey-form input[type="radio"] {
+  width: auto;
+  margin-right: 6px;
+}
+
+.survey-form button {
+  background-color: #f9a825;
+  color: white;
+  border: none;
+  width: 100%;
+  padding: 8px;
+  font-size: 1rem;
+  cursor: pointer;
+  margin-top: 1rem;
+}
+
+.survey-form button:hover {
+  background-color: #e08e00;
+}
+
+/* Description Section */
+.description {
+  width: 48%;
+}
+
+.description h2 {
+  font-size: 1.1rem;
+  margin-top: 0;
+}
+
+.description p {
+  font-size: 0.9rem;
+  line-height: 1.4;
+}
+
+.description p strong {
+  font-weight: bold;
+}
+
+ 
