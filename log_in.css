@@ -1,7 +1,7 @@
 body {
   margin: 0;
   font-family: 'Segoe UI', sans-serif;
-  background-color: #f4f4f4;
+  background-color: white;
 }
 
 /* Header base */
@@ -10,7 +10,7 @@ body {
   margin-bottom: 1.5rem;
   overflow: visible;
   
-  
+
 }
 
 .header-flex {
@@ -101,6 +101,7 @@ body {
   gap: 1.5rem;
   padding: 1.5rem 3rem 3rem; /* reduced top padding */
   flex-wrap: wrap;
+  background-color:  #ece1e1;
 }
 
 .description-box {
@@ -118,12 +119,14 @@ body {
 .description-box p {
   color: #444;
   line-height: 1.5;
+  
 }
+
 
 .form-box {
   position: relative;
   margin: auto;
-  background-color: #68cf6d;
+  background-color: #9bd49e;
   padding: 2.5rem;
   border-radius: 0px;
   width: 300px;
@@ -159,7 +162,7 @@ body {
 
 .social-buttons button {
   border: 1px solid #ccc;         /* light gray border */
-  background-color: #8edd75;
+  background-color: #9bd49e;
   cursor: pointer;
   padding: 6px;
   border-radius: 999px;
@@ -182,7 +185,7 @@ body {
 }
 
 .facebook-btn {
-  background-color: #050505;
+  background-color:#fff;
 }
 
 .text-muted {
