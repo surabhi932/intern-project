@@ -1,0 +1,214 @@
+body {
+  margin: 0;
+  font-family: 'Segoe UI', sans-serif;
+  background-color: #f4f4f4;
+}
+
+/* Header base */
+.page-header {
+ height: 120px;
+  margin-bottom: 1.5rem;
+  overflow: visible;
+  
+  
+}
+
+.header-flex {
+  display: flex;
+  width: 100%;
+  height: 100%;
+  justify-content: space-between;
+  margin-top: 10px;
+}
+
+/* Black strip with diagonal end */
+.black-strip {
+  width: 70%;
+  height: 100%;
+  background: #000;
+  position: relative;
+  display: flex;
+  align-items: center;
+  padding: 0 2rem;
+  color: white;
+}
+
+.black-strip::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  right: -100px;
+  width: 0;
+  height: 0;
+  border-bottom: 120px solid #000;
+  border-right: 100px solid transparent;
+}
+
+/* Header content inside the black strip */
+.header-content {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  position: relative;
+  z-index: 2;
+}
+
+.page-header h1 {
+  font-size: 1.8rem;
+  font-weight: 700;
+  line-height: 1.2;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.3);
+  margin: 0;
+}
+
+/* Logo on the right */
+.logo {
+  width: auto;
+  height: 100%;
+  object-fit: contain;
+  padding: 10px;
+}
+
+/* Decorative Sloped Box */
+.sloped-shadow-box {
+ width: 300px;
+  height: 20px; /* 🔧 reduced height for slim look */
+  margin: -1.8rem 1px 1.5rem 180px; /* adjusted to position under heading */
+  background: #555151; /* light gray */
+  clip-path: polygon(0% 0%, 85% 0%, 100% 100%, 15% 100%); /* smoother slope */
+  box-shadow: 0 2px 6px rgba(114, 113, 113, 0.3); /* soft gray shadow */
+  z-index: 0;
+  
+ /* position: absolute;
+  bottom: -1px;               /* ✅ attaches it directly to black strip */
+ /* left: 180px;                /* or adjust as per your desired x-offset */
+ /* width: 300px;
+  height: 20px;
+  background: #555151;
+  clip-path: polygon(0% 0%, 85% 0%, 100% 100%, 15% 100%);
+  box-shadow: 0 2px 6px rgba(114, 113, 113, 0.3);
+  z-index: 0; /* place behind heading text/logo if needed */
+}
+
+
+.main-container {
+  display: flex;
+  justify-content:flex-start;
+  align-items: flex-start;
+  gap: 1.5rem;
+  padding: 1.5rem 3rem 3rem; /* reduced top padding */
+  flex-wrap: wrap;
+}
+
+.description-box {
+  max-width: 400px;
+  display: block;
+  align-items: center;
+  justify-content: flex-start;
+  margin-left: 15px;
+}
+
+.description-box h2 {
+  margin-bottom: 1.5rem;
+}
+
+.description-box p {
+  color: #444;
+  line-height: 1.5;
+}
+
+.form-box {
+  position: relative;
+  margin: auto;
+  background-color: #68cf6d;
+  padding: 2.5rem;
+  border-radius: 0px;
+  width: 300px;
+  height: 300px;
+  box-shadow: 0 8px 15px rgba(0,0,0,0.15);
+  text-align: center;
+   
+}
+.form-box::before {
+  content: "";
+  position: absolute;
+  top: 5px;    /* ✅ adds top margin */
+  bottom: 5px; /* ✅ adds bottom margin */
+  left: 0;
+  width: 4px;   /* thin strip width */
+   background: linear-gradient(to bottom, #cdeccd, #2d8c38, #cdeccd); /* ✅ gradient top-bottom */
+
+  border-radius: 1px;
+}
+
+.form-box h2 {
+  margin-bottom: 1rem;
+  color: #333;
+}
+
+.social-buttons {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+  margin-top: 0.5rem;
+  margin-bottom: 0.6rem; /* reduce space from bottom */
+}
+
+.social-buttons button {
+  border: 1px solid #ccc;         /* light gray border */
+  background-color: #8edd75;
+  cursor: pointer;
+  padding: 6px;
+  border-radius: 999px;
+  width: 70px;
+  height: 36px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: all 0.3s ease;
+}
+
+.social-buttons button:hover {
+  border-color: #999;
+  transform: scale(1.05);
+}
+
+
+.google-btn {
+  background-color: #fff;
+}
+
+.facebook-btn {
+  background-color: #050505;
+}
+
+.text-muted {
+  font-size: 0.8rem;
+  color: #222;
+  margin: 0.5rem 0;
+}
+
+form input {
+  width: 68%;
+  padding: 0.7rem;
+  margin: 0.4rem 0;
+  border: none;
+  border-radius: 5px;
+}
+
+.submit-btn {
+  width: 50%;
+  padding: 0.7rem;
+  background-color: #214926;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.submit-btn:hover {
+  background-color: #329b3e;
+}
