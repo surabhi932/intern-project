@@ -1,96 +1,8 @@
 body {
   margin: 0;
   font-family: 'Segoe UI', sans-serif;
-  background-color: white;
-}
-
-/* Header base */
-.page-header {
- height: 120px;
-  margin-bottom: 1.5rem;
-  overflow: visible;
-  
-
-}
-
-.header-flex {
-  display: flex;
-  width: 100%;
-  height: 100%;
-  justify-content: space-between;
-  margin-top: 10px;
-}
-
-/* Black strip with diagonal end */
-.black-strip {
-  width: 70%;
-  height: 100%;
-  background: #000;
-  position: relative;
-  display: flex;
-  align-items: center;
-  padding: 0 2rem;
-  color: white;
-}
-
-.black-strip::after {
-  content: "";
-  position: absolute;
-  bottom: 0;
-  right: -100px;
-  width: 0;
-  height: 0;
-  border-bottom: 120px solid #000;
-  border-right: 100px solid transparent;
-}
-
-/* Header content inside the black strip */
-.header-content {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  width: 100%;
-  position: relative;
-  z-index: 2;
-}
-
-.page-header h1 {
-  font-size: 1.8rem;
-  font-weight: 700;
-  line-height: 1.2;
-  text-transform: uppercase;
-  letter-spacing: 0.5px;
-  text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.3);
-  margin: 0;
-}
-
-/* Logo on the right */
-.logo {
-  width: auto;
-  height: 100%;
-  object-fit: contain;
-  padding: 10px;
-}
-
-/* Decorative Sloped Box */
-.sloped-shadow-box {
- width: 300px;
-  height: 20px; /* 🔧 reduced height for slim look */
-  margin: -1.8rem 1px 1.5rem 180px; /* adjusted to position under heading */
-  background: #555151; /* light gray */
-  clip-path: polygon(0% 0%, 85% 0%, 100% 100%, 15% 100%); /* smoother slope */
-  box-shadow: 0 2px 6px rgba(114, 113, 113, 0.3); /* soft gray shadow */
-  z-index: 0;
-  
- /* position: absolute;
-  bottom: -1px;               /* ✅ attaches it directly to black strip */
- /* left: 180px;                /* or adjust as per your desired x-offset */
- /* width: 300px;
-  height: 20px;
-  background: #555151;
-  clip-path: polygon(0% 0%, 85% 0%, 100% 100%, 15% 100%);
-  box-shadow: 0 2px 6px rgba(114, 113, 113, 0.3);
-  z-index: 0; /* place behind heading text/logo if needed */
+  background-color: rgb(250, 243, 243);
+;
 }
 
 
@@ -101,19 +13,19 @@ body {
   gap: 1.5rem;
   padding: 1.5rem 3rem 3rem; /* reduced top padding */
   flex-wrap: wrap;
-  background-color:  #ece1e1;
 }
 
 .description-box {
-  max-width: 400px;
-  display: block;
+  max-width: 600px;
+  margin: 0 auto;
   align-items: center;
-  justify-content: flex-start;
-  margin-left: 15px;
+  padding: 20px;
+  margin-right:-20px;
 }
 
 .description-box h2 {
   margin-bottom: 1.5rem;
+  text-align: center;
 }
 
 .description-box p {
@@ -125,7 +37,6 @@ body {
 
 .form-box {
   position: relative;
-  margin: auto;
   background-color: #9bd49e;
   padding: 2.5rem;
   border-radius: 0px;
@@ -133,6 +44,7 @@ body {
   height: 300px;
   box-shadow: 0 8px 15px rgba(0,0,0,0.15);
   text-align: center;
+  margin: 0 auto;
    
 }
 .form-box::before {
