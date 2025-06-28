@@ -3,10 +3,10 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Tip Calculator</title>
-  <link rel="stylesheet" href="cal.css">
+  <title>weight converter</title>
+  <link rel="stylesheet" href="weight.css">
   <style>
-      .header-container {
+    .header-container {
       position: relative;
     }
 
@@ -69,8 +69,8 @@
 /* Header content inside the black strip */
 .header-content {
   display: flex;
-  align-items: center;
-  justify-content: space-between;
+  justify-content: center;   /* center horizontally */
+  align-items: center;       /* center vertically */
   width: 100%;
   position: relative;
   z-index: 2;
@@ -103,7 +103,7 @@
         <div class="header-content">
           <h1>
             FRONTEND BEGINNER LEVEL<br />
-            ASSIGNMENT NO. 3
+            ASSIGNMENT NO. 4
           </h1>
         </div>
       </div>
@@ -116,37 +116,46 @@
        <!-- Decorative Sloped Box -->
   <div class="sloped-shadow-box"></div>
   </div>
- <main class="container">
-    <div class="calculator-box">
-      <h2>Tip Calculator</h2>
-      <p>Enter the bill amount and tip percentage to calculate the total.</p>
-      
-      <label for="bill">Bill amount:</label>
-      <input type="number" id="bill" placeholder="Enter bill amount" />
-
-      <label for="tip">Tip percentage:</label>
-      <input type="number" id="tip" placeholder="Enter tip percentage" />
-
-      <button onclick="calculateTip()">Calculate</button>
-
-      <p class="total">Total: <strong id="total">$0.00</strong></p>
+   <!-- Main Content -->
+  <div class="container">
+  <div class="big-box">
+   <!-- Left: Weight Converter -->
+    <div class="converter-box">
+      <h2>Weight Converter</h2>
+      <label for="pounds">Pounds:</label>
+      <input type="number" id="pounds" placeholder="Enter number" oninput="convertWeight()" />
+      <p id="result">Your weight in kg is:</p>
     </div>
-
+    </div>
+    <!-- Right: Description -->
     <div class="description-box">
-      <h3>Calculator</h3>
-      <p><strong>Description :</strong> In this project, our aim is to build a modern tip calculator. The project’s primary interface comprises a container labeled “Tip Calculator” with two input fields: one for the bill amount and the other for the tip percentage. The tip calculator has a modern design that is styled using CSS.</p>
+      <h2>Weight Converter</h2>
+             <p><strong>Description</strong>: Let's create a weight converter project that converts pounds to kilograms. The webpage features an input field where users can enter a weight in pounds, and the webpage automatically displays the equivalent weight in kilograms. After 10 seconds, the result is removed, and the input field is emptied using the 'set timeout' method.</p>
     </div>
-  </main>
+  </div>
 
+  <!-- JavaScript -->
   <script>
-    function calculateTip() {
-      const bill = parseFloat(document.getElementById('bill').value);
-      const tip = parseFloat(document.getElementById('tip').value);
-      if (!isNaN(bill) && !isNaN(tip)) {
-        const total = bill + (bill * tip / 100);
-        document.getElementById('total').innerText = `$${total.toFixed(2)}`;
+    let timeout;
+
+    function convertWeight() {
+      clearTimeout(timeout);
+
+      const pounds = document.getElementById('pounds').value;
+      const result = document.getElementById('result');
+
+      if (pounds) {
+        const kg = (pounds * 0.453592).toFixed(2);
+        result.textContent = `Your weight in kg is: ${kg}`;
+        timeout = setTimeout(() => {
+          result.textContent = "Your weight in kg is:";
+          document.getElementById('pounds').value = "";
+        }, 10000);
+      } else {
+        result.textContent = "Your weight in kg is:";
       }
     }
   </script>
+
 </body>
 </html>
