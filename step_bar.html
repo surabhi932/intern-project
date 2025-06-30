@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Step Progress Bar</title>
+  <link rel="stylesheet" href="step_bar.css" />
+  <style>
+     .header-container {
+      position: relative;
+    }
+
+    /* Black header */
+   .page-header {
+ height: 120px;
+  margin-bottom: 1.5rem;
+  overflow: visible;
+  
+
+}
+
+    /* Sloped shadow strip */
+    .sloped-shadow-box {
+  position: absolute;
+  top: 100%;      /* below header */
+  left: 0;
+  width: 400px;
+  height: 15px;
+  margin-left: 35px;
+  background-color: #a09b9b;
+  clip-path: polygon(0 0, 85% 0, 100% 100%, 15% 100%);
+  
+  /* ↓ Softer shadow: lower blur radius + lighter opacity */
+  box-shadow: 0 2px 4px rgba(243, 238, 238, 0.2);
+}
+
+   .header-flex {
+  display: flex;
+  width: 100%;
+  height: 100%;
+  justify-content: space-between;
+  margin-top: 10px;
+}
+
+
+/* Black strip with diagonal end */
+.black-strip {
+  width: 70%;
+  height: 100%;
+  background: #000;
+  position: relative;
+  display: flex;
+  align-items: center;
+  padding: 0 2rem;
+  color: white;
+}
+
+.black-strip::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  right: -100px;
+  width: 0;
+  height: 0;
+  border-bottom: 120px solid #000;
+  border-right: 100px solid transparent;
+}
+
+/* Header content inside the black strip */
+.header-content {
+  display: flex;
+  justify-content: center;   /* center horizontally */
+  align-items: center;       /* center vertically */
+  width: 100%;
+  position: relative;
+  z-index: 2;
+}
+
+.page-header h1 {
+  font-size: 1.8rem;
+  font-weight: 700;
+  line-height: 1.2;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.3);
+  margin: 0;
+}
+.logo {
+  width: auto;
+  height: 100%;
+  object-fit: contain;
+  padding: 10px;
+  margin-right:40px;
+  
+}
+
+
+  </style>
+</head>
+
+<body>
+
+  <!-- Header Section -->
+  <div class="header-container">
+    <header class="page-header">
+      <div class="header-flex">
+        <div class="black-strip">
+          <div class="header-content">
+            <h1>
+              FRONTEND BEGINNER LEVEL<br />
+              ASSIGNMENT NO. 5
+            </h1>
+          </div>
+        </div>
+        <img src="logo.jpg" alt="Bridge Engineers" class="logo" />
+      </div>
+    </header>
+    <div class="sloped-shadow-box"></div>
+  </div>
+
+  <!-- Main Content -->
+  <div class="container">
+  <!-- Step Progress Box -->
+  <div class="progress-box">
+<div class="progress-wrapper">
+  <div class="step"><div class="circle">✔</div><p>start</p></div>
+  
+  <div class="step "><div class="circle">✔</div><p>step1</p></div>
+  
+    <div class="step"><div class="circle">✖</div><p>step2</p></div>
+
+  <div class="step"><div class="circle">✖</div><p>step3</p></div>
+  
+  <div class="step"><div class="circle">✖</div><p>finish</p></div>
+</div>
+
+    <div class="buttons">
+      <button id="prev" disabled>&larr;</button>
+      <button id="next">&rarr;</button>
+    </div>
+  </div>
+
+  <!-- Description Box -->
+  <div class="description-box">
+    <h2>Step Progress Bar</h2>
+    <p><strong>Description</strong> : Welcome to the Step Progress Bar Project! The final version includes five steps. We also have previous and next buttons. Initially, the previous button is disabled as we cannot go back to any previous step yet. Clicking on the next button displays the first step and enables the previous button. As we continue clicking on the next button, we move forward to each step until we reach the final step, after which the next button becomes disabled.</p>
+  </div>
+</div>
+
+  <!-- JavaScript -->
+  <script src="step_bar.js"></script>
+</body>
+</html>
