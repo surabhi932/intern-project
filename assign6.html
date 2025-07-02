@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Real Time Character Counter</title>
+  <link rel="stylesheet" href="assign6.css">
+  <style>
+     .header-container {
+      position: relative;
+    }
+
+    /* Black header */
+   .page-header {
+ height: 120px;
+  margin-bottom: 1.5rem;
+  overflow: visible;
+  
+
+}
+
+    /* Sloped shadow strip */
+    .sloped-shadow-box {
+  position: absolute;
+  top: 100%;      /* below header */
+  left: 0;
+  width: 400px;
+  height: 15px;
+  margin-left: 35px;
+  background-color: #a09b9b;
+  clip-path: polygon(0 0, 85% 0, 100% 100%, 15% 100%);
+  
+  /* ↓ Softer shadow: lower blur radius + lighter opacity */
+  box-shadow: 0 2px 4px rgba(243, 238, 238, 0.2);
+}
+
+   .header-flex {
+  display: flex;
+  width: 100%;
+  height: 100%;
+  justify-content: space-between;
+  margin-top: 10px;
+}
+
+
+/* Black strip with diagonal end */
+.black-strip {
+  width: 70%;
+  height: 100%;
+  background: #000;
+  position: relative;
+  display: flex;
+  align-items: center;
+  padding: 0 2rem;
+  color: white;
+}
+
+.black-strip::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  right: -100px;
+  width: 0;
+  height: 0;
+  border-bottom: 120px solid #000;
+  border-right: 100px solid transparent;
+}
+
+/* Header content inside the black strip */
+.header-content {
+  display: flex;
+  justify-content: center;   /* center horizontally */
+  align-items: center;       /* center vertically */
+  width: 100%;
+  position: relative;
+  z-index: 2;
+}
+
+.page-header h1 {
+  font-size: 1.8rem;
+  font-weight: 700;
+  line-height: 1.2;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.3);
+  margin: 0;
+}
+.logo {
+  width: auto;
+  height: 100%;
+  object-fit: contain;
+  padding: 10px;
+  margin-right:40px;
+  
+}
+
+
+  </style>
+</head>
+
+<body>
+
+  <!-- Header Section -->
+  <div class="header-container">
+    <header class="page-header">
+      <div class="header-flex">
+        <div class="black-strip">
+          <div class="header-content">
+            <h1>
+              FRONTEND BEGINNER LEVEL<br />
+              ASSIGNMENT NO. 6
+            </h1>
+          </div>
+        </div>
+        <img src="logo.jpg" alt="Bridge Engineers" class="logo" />
+      </div>
+    </header>
+    <div class="sloped-shadow-box"></div>
+  </div>
+<div class="container">
+  <!-- Outer Box -->
+ <div class="outer-box">
+    <!-- Inner Box -->
+      <div class="inner-box">
+          <h2>Real-time Charater Counter</h2>
+           <textarea id="text-input" maxlength="50" placeholder="Type here...">Nice job!</textarea>
+            <div class="counter">
+                <span>Total Characters: <span class="total" id="char-count">9</span></span>
+                <span>Remaining: <span class="remaining" id="char-remaining">41</span></span>
+            </div>
+        </div>
+    </div>
+   <!-- Right: Description -->
+    <div class="description-box">
+      <h3>Real-time character counter</h3>
+        <p><strong>Description:</strong> Our project aims to create a real-time character counter using JavaScript. It features a text area container that displays both the total character count and remaining character count of 50. As users type, the total character count dynamically increases, and the remaining character count decreases.</p>
+  </div>
+</div>
+  <script>
+    const textarea = document.getElementById("text-input");
+    const charCount = document.getElementById("char-count");
+    const charRemaining = document.getElementById("char-remaining");
+
+    textarea.addEventListener("input", () => {
+      const len = textarea.value.length;
+      charCount.textContent = len;
+      charRemaining.textContent = 50 - len;
+    });
+
+    textarea.dispatchEvent(new Event("input"));
+  </script>
+
+</body>
+</html>
