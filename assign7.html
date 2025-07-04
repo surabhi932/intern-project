@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Assignment No. 7 - Random Photos</title>
+  <link rel="stylesheet" href="assign7.css" />
+  <style>
+  .header-container {
+      position: relative;
+    }
+
+    /* Black header */
+   .page-header {
+ height: 120px;
+  margin-bottom: 1.5rem;
+  overflow: visible;
+  
+
+}
+
+    /* Sloped shadow strip */
+    .sloped-shadow-box {
+  position: absolute;
+  top: 100%;      /* below header */
+  left: 0;
+  width: 400px;
+  height: 15px;
+  margin-left: 35px;
+  background-color: #4e4c4c;
+  clip-path: polygon(0 0, 95% 0, 100% 100%, 5% 100%);
+  
+  /* ↓ Softer shadow: lower blur radius + lighter opacity */
+  box-shadow: 0 2px 4px rgba(243, 238, 238, 0.2);
+}
+
+   .header-flex {
+  display: flex;
+  width: 100%;
+  height: 100%;
+  justify-content: space-between;
+  margin-top: 10px;
+}
+
+
+/* Black strip with diagonal end */
+.black-strip {
+  width: 70%;
+  height: 100%;
+  background: #000;
+  position: relative;
+  display: flex;
+  align-items: center;
+  padding: 0 2rem;
+  color: white;
+}
+
+.black-strip::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  right: -100px;
+  width: 0;
+  height: 0;
+  border-bottom: 120px solid #000;
+  border-right: 100px solid transparent;
+}
+
+/* Header content inside the black strip */
+.header-content {
+  font-size: 50px;
+  font-weight: bold;
+  font-family: Arial, sans-serif;
+  display: flex;
+  justify-content: center;   /* center horizontally */
+  align-items: center;       /* center vertically */
+  width: 100%;
+  position: relative;
+  z-index: 2;
+}
+
+.page-header h1 {
+  font-size: 1.8rem;
+  font-weight: 700;
+  line-height: 1.2;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.3);
+  margin: 0;
+}
+.logo {
+  width: auto;
+  height: 100%;
+  object-fit: contain;
+  padding: 10px;
+  margin-right:40px;
+}
+
+  </style>
+</head>
+<body>
+     <div class="header-container">
+       <header class="page-header">
+    <div class="header-flex">
+      <div class="black-strip">
+        <div class="header-content">
+          <h1>
+            FRONTEND BEGINNER LEVEL<br />
+            ASSIGNMENT NO. 7
+          </h1>
+        </div>
+      </div>
+      
+      <img src="logo.jpg" alt="Bridge Engineers" class="logo" />
+     
+    </div>
+ 
+  </header>
+       <!-- Decorative Sloped Box -->
+  <div class="sloped-shadow-box"></div>
+</div>
+  <!-- Content -->
+  <main class="container">
+    <!-- Image Box -->
+    <div class="image-box">
+      <div class="gallery">
+        <!-- Row 1: Fill all 4 columns -->
+        <img src="https://loremflickr.com/200/200/nature?lock=1" alt="Random">
+        <img src="https://loremflickr.com/200/200/people?lock=2" alt="Random">
+        <img src="https://loremflickr.com/200/200/city?lock=3" alt="Random">
+        <img src="https://loremflickr.com/200/200/abstract?lock=4" alt="Random">
+        
+        <!-- Row 2: Only fill 2nd and 3rd grid positions -->
+        <div class="empty"></div>
+        <img src="https://loremflickr.com/200/200/animals?lock=5" alt="Random">
+        <img src="https://loremflickr.com/200/200/food?lock=6" alt="Random">
+        <div class="empty"></div>
+      </div>
+    </div>
+
+           <div class="description-box">
+             <h2>Random Photos</h2>
+               <p><strong>Description :</strong> Our project involves creating a random image feed that displays six images from the "Lorem Pixel" website. The images are randomly selected and refresh with each page refresh. We also have a button at the bottom of the page to add new random images.</p>
+            </div>
+      </div>
+   </div>
+</main>
+</body>
+</html>
