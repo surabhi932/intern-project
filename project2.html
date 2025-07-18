@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>BMI Calculator</title>
+  <link rel="stylesheet" href="project2.css" />
+  <style>
+  .header-container {
+      position: relative;
+    }
+
+    /* Black header */
+   .page-header {
+ height: 120px;
+  margin-bottom: 1.5rem;
+  overflow: visible;
+  
+
+}
+
+    /* Sloped shadow strip */
+    .sloped-shadow-box {
+  position: absolute;
+  top: 100%;      /* below header */
+  left: 0;
+  width: 400px;
+  height: 15px;
+  margin-left: 35px;
+  background-color: #4e4c4c;
+  clip-path: polygon(0 0, 95% 0, 100% 100%, 5% 100%);
+  
+  /* ↓ Softer shadow: lower blur radius + lighter opacity */
+  box-shadow: 0 2px 4px rgba(243, 238, 238, 0.2);
+}
+
+   .header-flex {
+  display: flex;
+  width: 100%;
+  height: 100%;
+  justify-content: space-between;
+  margin-top: 10px;
+}
+
+
+/* Black strip with diagonal end */
+.black-strip {
+  width: 70%;
+  height: 100%;
+  background: #000;
+  position: relative;
+  display: flex;
+  align-items: center;
+  padding: 0 2rem;
+  color: white;
+}
+
+.black-strip::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  right: -100px;
+  width: 0;
+  height: 0;
+  border-bottom: 120px solid #000;
+  border-right: 100px solid transparent;
+}
+
+/* Header content inside the black strip */
+.header-content {
+  font-size: 50px;
+  font-weight: bold;
+  font-family: Arial, sans-serif;
+  display: flex;
+  justify-content: center;   /* center horizontally */
+  align-items: center;       /* center vertically */
+  width: 100%;
+  position: relative;
+  z-index: 2;
+}
+
+.page-header h1 {
+  font-size: 1.8rem;
+  font-weight: 700;
+  line-height: 1.2;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.3);
+  margin: 0;
+}
+.logo {
+  width: auto;
+  height: 100%;
+  object-fit: contain;
+  padding: 10px;
+  margin-right:40px;
+}
+
+  </style>
+</head>
+<body>
+     <div class="header-container">
+       <header class="page-header">
+    <div class="header-flex">
+      <div class="black-strip">
+        <div class="header-content">
+          <h1>
+            FRONTEND BEGINNER LEVEL<br />
+            PROJECT NO. 2
+          </h1>
+        </div>
+      </div>
+      
+      <img src="logo.jpg" alt="Bridge Engineers" class="logo" />
+     
+    </div>
+ 
+  </header>
+       <!-- Decorative Sloped Box -->
+  <div class="sloped-shadow-box"></div>
+</div>
+  <div class="container">
+                 <!-- Outer Box -->
+                <div class="outer-box">
+                     <!-- Inner Box -->
+                    <div class="inner-box">
+  
+                        <h2>Body Mass Index (BMI) Calculator</h2>
+
+                        <label for="height">Your Height (cm):</label>
+                         <input type="number" id="height" placeholder="Enter height in cm" />
+
+                        <label for="weight">Your Weight (kg):</label>
+                        <input type="number" id="weight" placeholder="Enter weight in kg" />
+
+                         <button onclick="calculateBMI()">Compute BMI</button>
+                              <input type="text" id="bmi-result" readonly placeholder="BMI value will appear here">
+                                <p id="weight-condition"> weight-condition</p> <!-- This will show the weight condition -->
+                    </div>
+                </div>
+                            <div class="description-box">
+                                 <h3>Project Name : <strong>BMI Calculator</strong></h3>
+                                      <p><strong>Description :</strong> This project aims to create a body mass index calculator. There are two input fields where the user can enter their height in centimeters and weight in kilograms.By clicking the "compute BMI" button, the BMI will be calculated and displayed along with the weight condition, which is determined by if statements based on the BMI. We will also install the project with a neumorphism design.</p>
+
+                            </div>
+</div>
+  <script src="project2.js"></script>
+</body>
+</html>
